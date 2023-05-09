@@ -1,0 +1,492 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* START - NETWORK SELECTOR */
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network'] {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile'] {
+  gap: 0rem;
+  margin-left: 1rem;
+  border-radius: 2rem;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkNone'] {
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']
+  > div[class$='-networkHeader'] {
+  display: none;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']
+  > div[class$='-networkHeader'] {
+  display: none;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']
+  > div[class$='-container'] {
+  width: 1rem;
+  height: 1rem;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class$='-networkTile']
+  > div[class$='-networkName'] {
+  margin-left: -1rem;
+}
+/* END - NETWORK SELECTOR */
+
+/* START - INPUT */
+div[class$='-input'] {
+  padding: 1rem;
+  margin: 1.3rem 1rem;
+  border-radius: 3rem;
+  width: calc(100% - 2rem);
+}
+
+div[class$='-input'] > div[class$='-outerContainer'] > div[class$='-content'] {
+  display: flex;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs'] {
+  position: relative;
+  flex-direction: row-reverse;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow'] {
+  flex: 1;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-amount']
+  > div[class*='-inputField'] {
+  background: none;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-amount']
+  > div[class*='-inputField']
+  > div[class$='-label'] {
+  display: none;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField'] {
+  flex-direction: row;
+  border-radius: 1.5rem;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField']
+  > div[class$='-label'] {
+  display: none;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-balance'] {
+  right: 0;
+  top: -2.2rem;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 1.5rem;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-balance']
+  > div[class$='-inputField'] {
+  font-size: 0.6rem;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.25rem 0.5rem;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-balance']
+  > div[class$='-inputField']
+  > div[class$='-label'] {
+  margin-bottom: 0;
+}
+
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-balance']
+  > div[class$='-inputField']
+  > div[class$='-label']::after {
+  content: ': ';
+  margin-right: 0.25rem;
+}
+/* END - INPUT */
+
+/* START - BACKGROUND */
+div[class$='-bg'] div[class$='-background'],
+div[class$='-bg'] div[class$='-gradientRight'],
+div[class$='-bg'] div[class$='-gradientRight2'],
+div[class$='-bg'] div[class$='-gradientLeft'],
+div[class$='-bg'] div[class$='-gradientLeft2'] {
+  display: none;
+}
+
+div[class$='-bg'] div[class$='-bridgeContent'] {
+  gap: 0;
+  border-radius: 1rem;
+}
+
+/* END - BACKGROUND */
+
+/* START - FORM */
+div[class$='-bridgeContent'] > div[class$='-container'] {
+  position: relative;
+}
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class*='-header'] {
+  border-radius: 0;
+}
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-header'] {
+  display: none;
+}
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header'] {
+  justify-content: flex-end;
+}
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-headerTitle'] {
+  display: none;
+}
+/* END - FORM */
+
+/* START - FOOTER */
+div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-elevated'] {
+  margin: 1rem;
+  font-weight: bold;
+  border-radius: 2rem;
+  width: calc(100% - 2rem);
+}
+
+div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-poweredBy'] {
+  padding-bottom: 2rem;
+}
+/* END - FOOTER */
+
+/* THEMING - LIGHT */
+main.light * {
+  color: #282828;
+}
+
+main.light
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-poweredBy']
+  * {
+  fill: #282828;
+}
+
+main.light
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-elevated'],
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-balance']
+  * {
+  color: #ffffff;
+  background-color: rgb(66, 130, 168);
+}
+
+main.light div[class$='-bg'] div[class$='-bridgeContent'] {
+  background-color: rgb(241, 241, 241);
+}
+
+main.light div[class$='-input'] {
+  background-color: rgb(227, 228, 229);
+  border: 1px solid rgb(227, 228, 229);
+}
+
+main.light div[class$='-input']:hover {
+  border-color: rgb(66, 130, 168);
+}
+
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile'],
+main.light
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet'],
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField'] {
+  background-color: rgb(66, 130, 168);
+}
+
+main.light
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet']:hover,
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField']:hover,
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']:hover {
+  background-color: rgb(111, 188, 240);
+}
+
+main.light
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet']
+  *,
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']
+  *,
+main.light
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField']
+  * {
+  color: #ffffff;
+}
+
+/* THEMING - DARK */
+main.dark * {
+  color: #ffffff;
+}
+
+main.dark
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-poweredBy']
+  * {
+  fill: #ffffff;
+}
+
+main.dark
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-elevated'],
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-balance']
+  * {
+  color: #ffffff;
+  background-color: rgb(66, 130, 168);
+}
+
+main.dark div[class$='-bg'] div[class$='-bridgeContent'] {
+  background-color: rgb(22, 42, 67);
+}
+
+main.dark div[class$='-input'] {
+  background-color: rgb(23, 59, 111);
+  border: 1px solid rgb(23, 59, 111);
+}
+
+main.dark div[class$='-input']:hover {
+  border-color: rgb(66, 130, 168);
+}
+
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile'],
+main.dark
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet'],
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField'] {
+  background-color: rgb(66, 130, 168);
+}
+
+main.dark
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet']:hover,
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField']:hover,
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']:hover {
+  background-color: rgb(111, 188, 240);
+}
+
+main.dark
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet']
+  *,
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile']
+  *,
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField']
+  * {
+  color: #ffffff;
+}
