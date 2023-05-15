@@ -8,6 +8,7 @@ export { default as FaucetSVG } from './faucet';
 export { default as GitBookSVG } from './git-book';
 export { default as GithubSVG } from './github';
 export { default as InstagramSVG } from './instagram';
+export { default as LiquiditySVG } from './linkedIn';
 export { default as LinkedInSVG } from './linkedIn';
 export { default as LogoSVG } from './logo';
 export { default as MediumSVG } from './medium';

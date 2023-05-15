@@ -12,6 +12,7 @@ export enum RoutesEnum {
   DEXFindPool = 'dex-find-pool',
   DEXPoolDetails = 'dex-pool-details',
   Bridge = 'bridge',
+  Liquidity = 'liquidity',
   Faucet = 'faucet',
 }
 
@@ -27,7 +28,9 @@ export const Routes: Record<RoutesEnum, string> = {
   [RoutesEnum.FarmDetails]: 'https://interestprotocol.com/dapp/farms/details',
   [RoutesEnum.DEXPool]: 'https://interestprotocol.com/dapp/dex/pool',
   [RoutesEnum.DEXFindPool]: 'https://interestprotocol.com/dapp/dex/pool/find',
-  [RoutesEnum.DEXPoolDetails]: 'https://interestprotocol.com/dapp/dex/pool/details',
+  [RoutesEnum.DEXPoolDetails]:
+    'https://interestprotocol.com/dapp/dex/pool/details',
   [RoutesEnum.Faucet]: 'https://interestprotocol.com/dapp/faucet',
+  [RoutesEnum.Liquidity]: 'https://interestprotocol.com/dapp/liquidity',
   [RoutesEnum.Bridge]: '/',
 };

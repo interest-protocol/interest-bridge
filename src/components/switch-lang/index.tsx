@@ -1,16 +1,15 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Box, Dropdown, Typography } from '../../elements';
 import { IDropdownData } from '../../elements/dropdown/dropdown.types';
 import { getSafeLocaleSVG } from '../../utils';
-
 import { SwitchLangProps } from './switch-lang.types';
-import { useTranslation } from 'react-i18next';
 
 const SwitchLang: FC<SwitchLangProps> = ({ isMobile }) => {
   const { i18n } = useTranslation();
 
-  const { changeLanguage, language, languages } = i18n;
+  const { changeLanguage, language } = i18n;
 
   return (
     <Dropdown
@@ -33,7 +32,7 @@ const SwitchLang: FC<SwitchLangProps> = ({ isMobile }) => {
         top: '2rem',
       }}
       data={
-        languages.map((locale) => ({
+        ['en-US', 'pt-BR', 'pt-PT'].map((locale) => ({
           value: locale,
           displayOption: (
             <Box

@@ -1,5 +1,6 @@
 import { useTheme } from '@stylin.js/react';
 import { FC, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Routes, RoutesEnum } from '../../../constants';
 import { Box, Typography } from '../../../elements';
@@ -9,6 +10,7 @@ import SwitchLang from '../../switch-lang';
 import MobileMenu from './mobile-menu';
 
 const Header: FC = () => {
+  const { t } = useTranslation();
   const { setDark, dark } = useTheme() as any;
 
   const [isMobile, setIsMobile] = useState(false);
@@ -74,28 +76,21 @@ const Header: FC = () => {
               DEX
             </Typography>
           </a>
-          <a href={Routes[RoutesEnum.Farms]}>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={Routes[RoutesEnum.Liquidity]}
+          >
             <Typography
               px="XL"
               cursor="pointer"
               variant="normal"
               borderRight="1px solid"
+              textTransform="uppercase"
               borderColor="bottomBackground"
               nHover={{ color: 'accentActive' }}
             >
-              FARMS
-            </Typography>
-          </a>
-          <a href={Routes[RoutesEnum.Faucet]} target="_blank" rel="noreferrer">
-            <Typography
-              px="XL"
-              cursor="pointer"
-              variant="normal"
-              borderRight="1px solid"
-              borderColor="bottomBackground"
-              nHover={{ color: 'accentActive' }}
-            >
-              FAUCET
+              {t('common.liquidity')}
             </Typography>
           </a>
           <Typography
