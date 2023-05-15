@@ -6,7 +6,7 @@ import { Routes, RoutesEnum, SOCIAL_MEDIAS } from '../../../constants';
 import { Box, Button } from '../../../elements';
 import Container from '../../container';
 import SocialMediaCard from '../../social-media-card';
-import { BridgeSVG, DexSVG, GitBookSVG } from '../../svg';
+import { BridgeSVG, DexSVG, GitBookSVG, LiquiditySVG } from '../../svg';
 
 const Footer: FC = () => {
   const { t } = useTranslation();
@@ -84,7 +84,7 @@ const Footer: FC = () => {
               nHover={{ bg: 'accent', color: 'text' }}
               nActive={{ bg: 'accentActive', color: 'text' }}
             >
-              <DexSVG
+              <LiquiditySVG
                 width="1.1rem"
                 height="1.1rem"
                 fill="currentColor"
