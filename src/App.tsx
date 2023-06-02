@@ -1,6 +1,8 @@
 import { ThemeProvider } from '@stylin.js/react';
 import WormholeBridge, {
   WormholeConnectConfig,
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
 } from '@wormhole-foundation/wormhole-connect';
 import { FC, useState } from 'react';
 
