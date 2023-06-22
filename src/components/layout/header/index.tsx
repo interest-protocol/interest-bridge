@@ -72,6 +72,7 @@ const Header: FC = () => {
               borderRight="1px solid"
               borderColor="bottomBackground"
               nHover={{ color: 'accentActive' }}
+              textTransform="uppercase"
             >
               Swap
             </Typography>
@@ -98,6 +99,7 @@ const Header: FC = () => {
             cursor="pointer"
             variant="normal"
             nHover={{ color: 'accentActive' }}
+            textTransform="uppercase"
           >
             BRIDGE
           </Typography>
