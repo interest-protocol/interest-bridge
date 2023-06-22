@@ -64,7 +64,7 @@ const Header: FC = () => {
           justifyContent="center"
           display={['none', 'none', 'flex']}
         >
-          <a href={Routes[RoutesEnum.DEX]} target="_blank" rel="noreferrer">
+          <a href={Routes[RoutesEnum.Swap]} target="_blank" rel="noreferrer">
             <Typography
               px="XL"
               cursor="pointer"
@@ -73,7 +73,7 @@ const Header: FC = () => {
               borderColor="bottomBackground"
               nHover={{ color: 'accentActive' }}
             >
-              DEX
+              Swap
             </Typography>
           </a>
           <a
