@@ -73,7 +73,7 @@ const Header: FC = () => {
               borderColor="bottomBackground"
               nHover={{ color: 'accentActive' }}
             >
-              DEX
+              Swap
             </Typography>
           </a>
           <a

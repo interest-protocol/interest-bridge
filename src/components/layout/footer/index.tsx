@@ -63,7 +63,7 @@ const Footer: FC = () => {
                 maxWidth="auto"
                 style={{ marginBottom: '8px' }}
               />
-              Dex
+              Swap
             </Button>
           </a>
           <a
