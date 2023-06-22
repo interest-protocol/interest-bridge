@@ -41,7 +41,7 @@ const Footer: FC = () => {
           justifyContent="center"
           display={['flex', 'flex', 'none']}
         >
-          <a href={Routes[RoutesEnum.DEX]} target="_blank" rel="noreferrer">
+          <a href={Routes[RoutesEnum.Swap]} target="_blank" rel="noreferrer">
             <Button
               ml="S"
               px="0.8rem"
