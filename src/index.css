@@ -48,10 +48,10 @@ div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
   > div[class$='-network'] {
-  top: 31px;
-  z-index: 2;
-  width: 30%;
   gap: 1rem;
+  top: 31px;
+  width: 30%;
+  z-index: 2;
   position: absolute;
   left: calc(1rem + 8px);
 }
@@ -182,7 +182,7 @@ div[class$='-input']
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
-    height: 3.375rem;
+  height: 3.375rem;
   flex-direction: row;
   align-items: center;
   border-radius: .25rem;
@@ -220,8 +220,8 @@ div[class$='-input']
   > div[class$='-balance']
   > div[class$='-inputField'] {
   font-size: 0.6rem;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
   padding: 0.25rem 0.5rem;
 }
 
@@ -251,10 +251,10 @@ div[class$='-input']
 div[class$='-bridgeContent'] 
   > div[class$='-container'] 
   > div[class*='-header']{
-    height: 4rem;
     margin: 0 auto;
+    font-size: 1rem;
+    height: 4.4375rem;
     width: calc(100% - 2rem);
-    border: .5px solid #45464F;
     background-color: transparent;
   }
 /* END - INPUT */
@@ -301,8 +301,8 @@ div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class$='-errorContainer']
   > div[class$='-header'] {
-  margin-bottom: .5rem;
   padding-right: 1rem;
+  margin-bottom: .5rem;
   justify-content: flex-end;
 }
 
@@ -321,8 +321,8 @@ div[class$='-bridgeContent']
 > div[class$='-connectWallet'] {
   left: 1rem;
   padding: 0;
-  position: absolute;
   font-size: 13px;
+  position: absolute;
   margin-bottom: -1rem;
   border-radius: .25rem;
   background-color: transparent;
@@ -345,8 +345,6 @@ div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-elevated'] {
   font-weight: bold;
   border-radius: .25rem;
   width: calc(100% - 2rem);
-  background-color: #B4C5FF;
-  color: #002A78;
 }
 
 div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-poweredBy'] {
@@ -379,21 +377,15 @@ main.light
   > div[class$='-amtRow']
   > div[class$='-balance']
   * {
-  color: #ffffff;
-  background-color: rgb(66, 130, 168);
-}
-
-main.light div[class$='-bg'] div[class$='-bridgeContent'] {
-  background-color: rgb(241, 241, 241);
+  color: #1B1B1F;
 }
 
 main.light div[class$='-input'] {
-  background-color: rgb(227, 228, 229);
-  border: 1px solid rgb(227, 228, 229);
+  border: 1px solid #757680
 }
 
 main.light div[class$='-input']:hover {
-  border-color: rgb(66, 130, 168);
+  border-color: #757680
 }
 
 main.light
@@ -410,12 +402,6 @@ main.light
   > div[class$='-network']
   > div[class*='-networkTile'],
 main.light
-  div[class$='-bridgeContent']
-  > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet'],
-main.light
   div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
@@ -423,37 +409,14 @@ main.light
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
-  background-color: rgb(66, 130, 168);
+  background-color: #EFEDF1;
 }
 
 main.light
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall']:hover,
-main.light
-  div[class$='-bridgeContent']
-  > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet']:hover,
-main.light
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-token']
-  > div[class*='-inputField']:hover,
-main.light
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile']:hover {
-  background-color: rgb(111, 188, 240);
+  div[class$='-bridgeContent'] 
+  > div[class$='-container'] 
+  > div[class*='-header']{
+    border: 1px solid #757680
 }
 
 main.light
@@ -487,7 +450,15 @@ main.light
   > div[class$='-token']
   > div[class*='-inputField']
   * {
-  color: #ffffff;
+  color: #1B1B1F;
+}
+
+main.light
+  div[class$='-bridgeContent'] 
+  > div[class$='-body'] 
+  > div[class*='-elevated'] {
+    background-color: #0053DB;
+    color: #FFF;
 }
 
 /* THEMING - DARK */
@@ -516,81 +487,22 @@ main.dark
   > div[class$='-balance']
   * {
   color: #ffffff;
-  background-color: rgb(66, 130, 168);
-}
-
-main.dark div[class$='-bg'] div[class$='-bridgeContent'] {
-  background-color: rgb(155, 190, 232);
 }
 
 main.dark div[class$='-input'] {
-  background-color: rgb(145, 174, 214);
-  border: 1px solid rgb(23, 59, 111);
+  border: 1px solid #8F909A
 }
 
 main.dark div[class$='-input']:hover {
-  border-color: rgb(66, 130, 168);
+  border-color: #8F909A
 }
 
 main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall'],
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile'],
-main.dark
-  div[class$='-bridgeContent']
-  > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet'],
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-token']
-  > div[class*='-inputField'] {
-  background-color: rgb(66, 130, 168);
-}
-
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall']:hover,
-main.dark
-  div[class$='-bridgeContent']
-  > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet']:hover,
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-token']
-  > div[class*='-inputField']:hover,
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile']:hover {
-  background-color: rgb(111, 188, 240);
-}
+div[class$='-bridgeContent'] 
+  > div[class$='-container'] 
+  > div[class*='-header']{
+    border: 1px solid #8F909A
+  }
 
 main.dark
   div[class$='-input']
@@ -624,4 +536,12 @@ main.dark
   > div[class*='-inputField']
   * {
   color: #ffffff;
+}
+
+main.dark
+div[class$='-bridgeContent'] 
+> div[class$='-body'] 
+> div[class*='-elevated'] {
+  color: #002A78;
+  background-color: #B4C5FF;
 }
