@@ -12,7 +12,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
   children,
   pageTitle = '',
 }) => {
-  const { colors, radii } = useTheme() as Theme;
+  const { colors, radii, dark } = useTheme() as Theme;
 
   return (
     <Box color="text" height="100vh" display="flex" flexDirection="column">
@@ -33,7 +33,14 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
       />
       <Box bg="surface" display="flex" height="100vh" overflow="hidden">
         <Sidebar />
-        <Box as="main" flex="1" minHeight="100vh" overflow="auto" px="1.5rem">
+        <Box
+          flex="1"
+          as="main"
+          px="1.5rem"
+          overflow="auto"
+          minHeight="100vh"
+          className={dark ? 'dark' : 'light'}
+        >
           <Box
             as="header"
             display="flex"
