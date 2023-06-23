@@ -48,9 +48,12 @@ div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
   > div[class$='-network'] {
-  top: 0;
-  left: 0;
+  top: 31px;
+  z-index: 2;
+  width: 30%;
+  gap: 1rem;
   position: absolute;
+  left: calc(1rem + 8px);
 }
 
 div[class$='-input']
@@ -64,11 +67,12 @@ div[class$='-input']
   > div[class$='-content']
   > div[class$='-network']
   > div[class*='-networkTile'] {
-  gap: 0rem;
-  margin-left: 1rem;
-  border-radius: .25rem;
+  gap: 1.6rem;
+  height: 56px;
   flex-direction: row;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
+  border-radius: .25rem;
+  justify-content: flex-start;
 }
 
 div[class$='-input']
@@ -120,10 +124,13 @@ div[class$='-input']
 
 /* START - INPUT */
 div[class$='-input'] {
+  height: 71px;
   padding: 0.5rem;
-  margin: .5rem 1rem 1.3rem;
   border-radius: .25rem;
   width: calc(100% - 2rem);
+  margin: .5rem 1rem 1.3rem;
+  border: 0.5px solid #45464F;
+  background-color: transparent;
 }
 
 div[class$='-input'] > div[class$='-outerContainer'] > div[class$='-content'] {
@@ -154,6 +161,7 @@ div[class$='-input']
   > div[class$='-amount']
   > div[class*='-inputField'] {
   background: none;
+  margin-left: 11.875rem;
 }
 
 div[class$='-input']
@@ -174,7 +182,9 @@ div[class$='-input']
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
+    height: 3.375rem;
   flex-direction: row;
+  align-items: center;
   border-radius: .25rem;
 }
 
@@ -241,9 +251,11 @@ div[class$='-input']
 div[class$='-bridgeContent'] 
   > div[class$='-container'] 
   > div[class*='-header']{
-    margin: 0 auto;
     height: 4rem;
+    margin: 0 auto;
     width: calc(100% - 2rem);
+    border: .5px solid #45464F;
+    background-color: transparent;
   }
 /* END - INPUT */
 
@@ -289,7 +301,7 @@ div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class$='-errorContainer']
   > div[class$='-header'] {
-    margin-bottom: .5rem;
+  margin-bottom: .5rem;
   padding-right: 1rem;
   justify-content: flex-end;
 }
@@ -307,8 +319,22 @@ div[class$='-bridgeContent']
 > div[class$='-errorContainer']
 > div[class$='-header']
 > div[class$='-connectWallet'] {
+  left: 1rem;
+  padding: 0;
+  position: absolute;
+  font-size: 13px;
+  margin-bottom: -1rem;
   border-radius: .25rem;
-  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+div[class$='-bridgeContent']
+> div[class$='-container']
+> div[class$='-errorContainer']
+> div[class$='-header']
+> div[class$='-connectWallet']
+> svg {
+  width: 1rem;
 }
 
 /* END - FORM */
@@ -319,6 +345,8 @@ div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-elevated'] {
   font-weight: bold;
   border-radius: .25rem;
   width: calc(100% - 2rem);
+  background-color: #B4C5FF;
+  color: #002A78;
 }
 
 div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-poweredBy'] {
