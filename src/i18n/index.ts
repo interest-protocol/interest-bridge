@@ -8,6 +8,11 @@ const resources = {
       common: {
         followUs: 'Follow Us',
         liquidity: 'Liquidity',
+        swap: 'Swap',
+        bridge: 'bridge',
+        home: 'Home',
+        light: 'Light',
+        dark: 'Dark',
         seoDescription: 'AMM DEX on Sui. Swap your tokens!',
       },
     },
@@ -18,6 +23,11 @@ const resources = {
       common: {
         followUs: 'Siga-nos',
         liquidity: 'Liquidez',
+        swap: 'Troca',
+        bridge: 'bridge',
+        home: 'Inicio',
+        light: 'Claro',
+        dark: 'Escuro',
         seoDescription:
           'Use as suas crypto para pedir emprestado Dinero, uma moeda estável, de graça.',
       },
@@ -29,8 +39,29 @@ const resources = {
       common: {
         followUs: 'Siga-nos',
         liquidity: 'Liquidez',
+        swap: 'Troca',
+        bridge: 'Bridge',
+        home: 'Inicio',
+        light: 'Claro',
+        dark: 'Escuro',
         seoDescription:
           'Use as suas crypto para pedir emprestado Dinero, uma moeda estável, de graça.',
+      },
+    },
+  },
+  'es-ES': {
+    translation: {
+      pageTitle: 'Bridge',
+      common: {
+        followUs: 'Síguenos en',
+        liquidity: 'Liquidez',
+        swap: 'Intercambio',
+        bridge: 'Puente',
+        home: 'Inicio',
+        light: 'Blanco',
+        dark: 'Oscuro',
+        seoDescription:
+          'Utilice su cripto para pedir prestado Dinero, una moneda estable, de forma gratuita.',
       },
     },
   },

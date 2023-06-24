@@ -1,10 +1,13 @@
 import { Box, Theme, useTheme } from '@interest-protocol/ui-kit';
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Tooltip } from 'react-tooltip';
 
-import { SwitchLang } from '..';
+import { TOAST_DURATION } from '../../constants';
+import useEventListener from '../../hooks/use-event-listener';
 import SEO from '../SEO';
+import HeaderNew from './header/header-new';
+import LangSwitch from './header/menu/lang-switch';
 import Sidebar from './header/sidebar';
 import { LayoutProps } from './layout.types';
 
@@ -12,11 +15,62 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
   children,
   pageTitle = '',
 }) => {
-  const { colors, radii, dark } = useTheme() as Theme;
+  const [isDesktop, setIsDesktop] = useState(false);
+  const { colors, radii, breakpoints, dark } = useTheme() as Theme;
+
+  const handleSetDesktopView = () =>
+    setIsDesktop(window.matchMedia(`(min-width: ${breakpoints[2]})`).matches);
+
+  useEventListener('resize', handleSetDesktopView, true);
+
+  if (isDesktop)
+    return (
+      <Box color="text" height="100vh" display="flex" flexDirection="column">
+        <SEO pageTitle={pageTitle} />
+        <Toaster
+          position="bottom-right"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              border: '1px solid',
+              borderRadius: radii.m,
+              color: colors.onSurface,
+              background: colors.surface,
+              borderColor: colors['primary.onPrimaryContainer'],
+            },
+            duration: 10000,
+          }}
+        />
+        <Box bg="surface" display="flex" height="100vh" overflow="hidden">
+          <Sidebar />
+          <Box
+            flex="1"
+            as="main"
+            px="1.5rem"
+            overflow="auto"
+            minHeight="100vh"
+            className={dark ? 'dark' : 'light'}
+          >
+            <Box
+              as="header"
+              display="flex"
+              variant="container"
+              justifyContent="flex-end"
+              pr={['unset', 'unset', 'unset', 'xl']}
+            >
+              <Box display="flex" justifyContent="space-between">
+                <LangSwitch />
+              </Box>
+            </Box>
+            {children}
+          </Box>
+        </Box>
+        <Tooltip />
+      </Box>
+    );
 
   return (
-    <Box color="text" height="100vh" display="flex" flexDirection="column">
-      <SEO pageTitle={pageTitle} />
+    <Box bg="surface" display="flex" minHeight="100vh" flexDirection="column">
       <Toaster
         position="bottom-right"
         reverseOrder={false}
@@ -28,34 +82,13 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
             background: colors.surface,
             borderColor: colors['primary.onPrimaryContainer'],
           },
-          duration: 10000,
+          duration: TOAST_DURATION,
         }}
       />
-      <Box bg="surface" display="flex" height="100vh" overflow="hidden">
-        <Sidebar />
-        <Box
-          flex="1"
-          as="main"
-          px="1.5rem"
-          overflow="auto"
-          minHeight="100vh"
-          className={dark ? 'dark' : 'light'}
-        >
-          <Box
-            as="header"
-            display="flex"
-            variant="container"
-            justifyContent="flex-end"
-            pr={['unset', 'unset', 'unset', 'xl']}
-          >
-            <Box display="flex" justifyContent="space-between">
-              <SwitchLang isMobile={false} />
-            </Box>
-          </Box>
-          {children}
-        </Box>
+      <HeaderNew />
+      <Box as="main" flex="1">
+        {children}
       </Box>
-      <Tooltip />
     </Box>
   );
 };

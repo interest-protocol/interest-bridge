@@ -9,12 +9,10 @@ import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 } from 'uuid';
 
-import { Routes, RoutesEnum } from '../../../../constants';
-import { AppTheme } from '../../../../interface';
-import { LogoSVG } from '../../../svg';
-import { SIDEBAR_ITEMS } from './sidebar.data';
+import { AppTheme } from '../../../../../interface';
+import { SIDEBAR_ITEMS } from '../../sidebar/sidebar.data';
 
-const Sidebar: FC = () => {
+const MainMenu: FC = () => {
   const { t } = useTranslation();
   const [pathName, setPathName] = useState('/');
   const { dark, setDark } = useTheme() as AppTheme<Theme>;
@@ -28,21 +26,16 @@ const Sidebar: FC = () => {
 
   return (
     <Box
-      p="2xl"
-      width="100%"
+      variant="container"
+      justifyItems="unset"
+      height="100%"
       display="flex"
-      maxWidth="20rem"
-      bg="surface.container"
       flexDirection="column"
-      borderRadius="0 1rem 1rem 0"
       justifyContent="space-between"
+      m="0 1.25rem"
+      pt="2.875rem"
     >
-      <Box>
-        <a href={Routes[RoutesEnum.Home]}>
-          <Box textAlign="center">
-            <LogoSVG full maxWidth="100%" maxHeight="2.6rem" height="100%" />
-          </Box>
-        </a>
+      <Box zIndex="2" gridColumn="1/-1">
         <Typography m="xl" variant="small" color="onSurfaceVariant">
           Menu
         </Typography>
@@ -51,17 +44,12 @@ const Sidebar: FC = () => {
             <a href={path} target="_blank" rel="noreferrer" key={v4()}>
               <Box
                 p="l"
-                key={v4()}
                 display="flex"
                 borderRadius="m"
                 color="onSurface"
                 opacity={disabled ? 0.7 : 1}
-                transition="all 350ms ease-in-out"
                 cursor={disabled ? 'not-allowed' : 'pointer'}
                 bg={pathName === path ? '#99BBFF14' : undefined}
-                nHover={{
-                  bg: !disabled && '#99BBFF28',
-                }}
               >
                 <Icon maxHeight="1.2rem" maxWidth="1.2rem" width="100%" />
                 <Typography variant="small" ml="l" textTransform="capitalize">
@@ -72,7 +60,7 @@ const Sidebar: FC = () => {
           ))}
         </Box>
       </Box>
-      <Box display="flex" justifyContent="center" gap="l">
+      <Box display="flex" justifyContent="center" gap="l" mb="4.188rem">
         <Typography
           variant="medium"
           color="onSurface"
@@ -98,4 +86,4 @@ const Sidebar: FC = () => {
   );
 };
 
-export default Sidebar;
+export default MainMenu;
