@@ -1,5 +1,11 @@
 import { Routes, RoutesEnum } from '../../../../constants';
-import { BridgeSVG, LiquiditySVG, SwapSVG } from '../../../svg';
+import {
+  BridgeSVG,
+  FarmSVG,
+  NewTokenSVG,
+  PoolSVG,
+  SwapSVG,
+} from '../../../svg';
 import Home from '../../../svg/home';
 
 export const SIDEBAR_ITEMS = [
@@ -16,9 +22,21 @@ export const SIDEBAR_ITEMS = [
     disabled: false,
   },
   {
-    Icon: LiquiditySVG,
-    name: 'common.liquidity',
+    Icon: PoolSVG,
+    name: 'common.pool',
+    path: Routes[RoutesEnum.DEXPool],
+    disabled: false,
+  },
+  {
+    Icon: FarmSVG,
+    name: 'common.farm',
     path: Routes[RoutesEnum.Liquidity],
+    disabled: false,
+  },
+  {
+    Icon: NewTokenSVG,
+    name: 'common.createToken',
+    path: Routes[RoutesEnum.NewToken],
     disabled: false,
   },
   {

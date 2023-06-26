@@ -11,6 +11,7 @@ import { v4 } from 'uuid';
 
 import { Routes, RoutesEnum } from '../../../../constants';
 import { AppTheme } from '../../../../interface';
+import { capitalize } from '../../../../utils';
 import { LogoSVG } from '../../../svg';
 import { SIDEBAR_ITEMS } from './sidebar.data';
 
@@ -64,8 +65,8 @@ const Sidebar: FC = () => {
                 }}
               >
                 <Icon maxHeight="1.2rem" maxWidth="1.2rem" width="100%" />
-                <Typography variant="small" ml="l" textTransform="capitalize">
-                  {t(name)}
+                <Typography variant="small" ml="l">
+                  {capitalize(t(name) as string)}
                 </Typography>
               </Box>
             </a>

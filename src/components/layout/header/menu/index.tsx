@@ -8,16 +8,8 @@ import MenuDesktop from './menu-desktop';
 import MenuMobile from './menu-mobile';
 
 const Menu: FC = () => {
-  const [isOpen, setIsOpen] = useState(false); //Boolean(query.menu)
-  const [isSettings, setIsSettings] = useState(false); //Boolean(query.settings)
-
-  // TODO: uncomment on Settings UI ready
-  // const handleOpenSettings = () => {
-  //   const url = new URL(window.location.href);
-  //   url.searchParams.set('settings', 'true');
-  //   window.history.pushState('', '', url.toString());
-  //   setIsSettings(true);
-  // };
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSettings, setIsSettings] = useState(false);
 
   const handleCloseSettings = () => {
     const url = new URL(window.location.href);
@@ -54,7 +46,7 @@ const Menu: FC = () => {
   return (
     <Box position="relative" width={['100%', '100%', '100%', 'unset']}>
       <Box
-        zIndex="2"
+        zIndex="20"
         display="flex"
         position="relative"
         flexDirection="row-reverse"

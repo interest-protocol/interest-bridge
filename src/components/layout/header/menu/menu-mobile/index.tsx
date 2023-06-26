@@ -13,7 +13,7 @@ const MenuMobile: FC<MenuMobileProps> = ({ isOpen, isSettings }) => {
       top="0"
       pt="4xl"
       left="0"
-      zIndex="1"
+      zIndex="10"
       width="100vw"
       height="100vh"
       position="fixed"

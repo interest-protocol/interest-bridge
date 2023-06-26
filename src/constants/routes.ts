@@ -14,6 +14,7 @@ export enum RoutesEnum {
   Bridge = 'bridge',
   Liquidity = 'liquidity',
   Faucet = 'faucet',
+  NewToken = 'new-token',
 }
 
 /**
@@ -31,6 +32,7 @@ export const Routes: Record<RoutesEnum, string> = {
   [RoutesEnum.DEXPoolDetails]:
     'https://interestprotocol.com/dapp/dex/pool/details',
   [RoutesEnum.Faucet]: 'https://interestprotocol.com/dapp/faucet',
+  [RoutesEnum.NewToken]: 'https://www.interestprotocol.com/dapp/create-token',
   [RoutesEnum.Liquidity]: 'https://interestprotocol.com/dapp/liquidity',
   [RoutesEnum.Bridge]: '/',
 };

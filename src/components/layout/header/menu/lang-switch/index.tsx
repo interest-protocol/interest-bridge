@@ -1,4 +1,4 @@
-import { Button } from '@interest-protocol/ui-kit';
+import { Button, Theme, useTheme } from '@interest-protocol/ui-kit';
 import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -12,6 +12,7 @@ const BOX_ID = 'lang-switch-box-id-123';
 const LangSwitch: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { i18n } = useTranslation();
+  const { colors } = useTheme() as Theme;
 
   const { language } = i18n;
 
@@ -33,15 +34,20 @@ const LangSwitch: FC = () => {
   return (
     <RefBox
       id={BOX_ID}
-      height="3rem"
       display="flex"
       position="relative"
       ref={connectedBoxRef}
       flexDirection="column"
       justifyContent="center"
+      borderRadius="100%"
+      border="1px solid"
+      transition="background-color .5s"
+      borderColor={colors['outline.outlineVariant']}
+      nHover={{
+        bg: colors['outline.outlineVariant'],
+      }}
     >
       <Button
-        ml="s"
         variant="icon"
         nHover={{ bg: 'transparent' }}
         onClick={() => setIsOpen(true)}
