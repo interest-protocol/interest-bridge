@@ -6,7 +6,7 @@ import { Tooltip } from 'react-tooltip';
 import { TOAST_DURATION } from '../../constants';
 import useEventListener from '../../hooks/use-event-listener';
 import SEO from '../SEO';
-import HeaderNew from './header/header-new';
+import Header from './header';
 import LangSwitch from './header/menu/lang-switch';
 import Sidebar from './header/sidebar';
 import { LayoutProps } from './layout.types';
@@ -85,7 +85,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
           duration: TOAST_DURATION,
         }}
       />
-      <HeaderNew />
+      <Header />
       <Box as="main" flex="1">
         {children}
       </Box>

@@ -17,8 +17,7 @@ div[class$='-input']
   > div[class$='-inputs']
   > div[class$='-networkRow']
   > div[class$='-networkSmall'] {
-  left: -2rem;
-  top: -5.5rem;
+  left: 0rem;
   position: absolute;
 }
 
@@ -56,6 +55,17 @@ div[class$='-input']
   left: calc(1rem + 8px);
 }
 
+@media screen and (max-width: 414px) {
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network'] {
+    top: 40px;
+    position: absolute;
+  left: calc(2rem + 8px);
+}
+}
+
 div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
@@ -73,6 +83,27 @@ div[class$='-input']
   padding: 1rem 1rem;
   border-radius: .25rem;
   justify-content: flex-start;
+}
+
+@media screen and (max-width: 414px) {
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-networkSmall'],
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile'] {
+  gap: 1.6rem;
+  height: 10px;
+  flex-direction: row;
+  padding: 1rem 1rem;
+  border-radius: .25rem;
+  justify-content: flex-start;
+}
 }
 
 div[class$='-input']
