@@ -16,12 +16,18 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
   pageTitle = '',
 }) => {
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const { colors, radii, breakpoints, dark } = useTheme() as Theme;
 
   const handleSetDesktopView = () =>
     setIsDesktop(window.matchMedia(`(min-width: ${breakpoints[2]})`).matches);
 
   useEventListener('resize', handleSetDesktopView, true);
+
+  const handleSetTabletView = () =>
+    setIsTablet(window.matchMedia(`(min-width: ${breakpoints[1]})`).matches);
+
+  useEventListener('resize', handleSetTabletView, true);
 
   if (isDesktop)
     return (
@@ -86,7 +92,15 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
         }}
       />
       <Header />
-      <Box as="main" flex="1" className={dark ? 'dark' : 'light'}>
+      <Box
+        as="main"
+        flex="1"
+        className={
+          dark
+            ? `dark ${!isTablet ? 'mobile' : 'tablet'}`
+            : `light ${!isTablet ? 'mobile' : 'tablet'}`
+        }
+      >
         {children}
       </Box>
     </Box>

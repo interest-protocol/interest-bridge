@@ -20,6 +20,7 @@ div[class$='-input']
   > div[class$='-networkRow']
   > div[class$='-networkSmall'] {
   left: 0rem;
+  top: -0.125rem;
   position: absolute;
 }
 
@@ -52,7 +53,7 @@ div[class$='-input']
   gap: 1rem;
   top: 31px;
   width: 30%;
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   left: calc(1rem + 8px);
 }
@@ -194,7 +195,31 @@ div[class$='-input']
   > div[class$='-amount']
   > div[class*='-inputField'] {
   background: none;
-  margin-left: 11.875rem;
+  margin-left: 45%;
+}
+
+main.tablet
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-amount']
+  > div[class*='-inputField'] {
+  background: none;
+  margin-left: 45%;
+}
+
+main.mobile
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-amount']
+  > div[class*='-inputField'] {
+  background: none;
+  margin-left: 70%;
 }
 
 div[class$='-input']
@@ -219,6 +244,7 @@ div[class$='-input']
   flex-direction: row;
   align-items: center;
   border-radius: 0.25rem;
+  margin-right: -0.625rem;
 }
 
 div[class$='-input']
@@ -569,6 +595,30 @@ main.dark
   > div[class*='-inputField']
   * {
   color: #ffffff;
+}
+
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-networkSmall'],
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile'],
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField'] {
+    background-color: rgba(255, 255, 255, 0.047);
 }
 
 main.dark
