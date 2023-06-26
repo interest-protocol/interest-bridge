@@ -86,7 +86,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
         }}
       />
       <Header />
-      <Box as="main" flex="1">
+      <Box as="main" flex="1" className={dark ? 'dark' : 'light'}>
         {children}
       </Box>
     </Box>

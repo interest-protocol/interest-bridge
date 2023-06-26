@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -57,13 +59,13 @@ div[class$='-input']
 
 @media screen and (max-width: 414px) {
   div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network'] {
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-network'] {
     top: 40px;
     position: absolute;
-  left: calc(2rem + 8px);
-}
+    left: calc(2rem + 8px);
+  }
 }
 
 div[class$='-input']
@@ -81,29 +83,29 @@ div[class$='-input']
   height: 56px;
   flex-direction: row;
   padding: 1rem 1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   justify-content: flex-start;
 }
 
 @media screen and (max-width: 414px) {
   div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall'],
-div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile'] {
-  gap: 1.6rem;
-  height: 10px;
-  flex-direction: row;
-  padding: 1rem 1rem;
-  border-radius: .25rem;
-  justify-content: flex-start;
-}
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-inputs']
+    > div[class$='-networkRow']
+    > div[class$='-networkSmall'],
+  div[class$='-input']
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-network']
+    > div[class*='-networkTile'] {
+    gap: 1.6rem;
+    height: 10px;
+    flex-direction: row;
+    padding: 1rem 1rem;
+    border-radius: 0.25rem;
+    justify-content: flex-start;
+  }
 }
 
 div[class$='-input']
@@ -157,10 +159,10 @@ div[class$='-input']
 div[class$='-input'] {
   height: 71px;
   padding: 0.5rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   width: calc(100% - 2rem);
-  margin: .5rem 1rem 1.3rem;
-  border: 0.5px solid #45464F;
+  margin: 0.5rem 1rem 1.3rem;
+  border: 0.5px solid #45464f;
   background-color: transparent;
 }
 
@@ -216,7 +218,7 @@ div[class$='-input']
   height: 3.375rem;
   flex-direction: row;
   align-items: center;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 div[class$='-input']
@@ -279,15 +281,15 @@ div[class$='-input']
   margin-right: 0.25rem;
 }
 
-div[class$='-bridgeContent'] 
-  > div[class$='-container'] 
-  > div[class*='-header']{
-    margin: 0 auto;
-    font-size: 1rem;
-    height: 4.4375rem;
-    width: calc(100% - 2rem);
-    background-color: transparent;
-  }
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class*='-header'] {
+  margin: 0 auto;
+  font-size: 1rem;
+  height: 4.4375rem;
+  width: calc(100% - 2rem);
+  background-color: transparent;
+}
 /* END - INPUT */
 
 /* START - BACKGROUND */
@@ -319,7 +321,7 @@ div[class$='-bridgeContent'] > div[class$='-container'] {
 div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class*='-header'] {
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 div[class$='-bridgeContent']
@@ -333,7 +335,7 @@ div[class$='-bridgeContent']
   > div[class$='-errorContainer']
   > div[class$='-header'] {
   padding-right: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   justify-content: flex-end;
 }
 
@@ -346,25 +348,25 @@ div[class$='-bridgeContent']
 }
 
 div[class$='-bridgeContent']
-> div[class$='-container']
-> div[class$='-errorContainer']
-> div[class$='-header']
-> div[class$='-connectWallet'] {
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet'] {
   left: 1rem;
   padding: 0;
   font-size: 13px;
   position: absolute;
   margin-bottom: -1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   background-color: transparent;
 }
 
 div[class$='-bridgeContent']
-> div[class$='-container']
-> div[class$='-errorContainer']
-> div[class$='-header']
-> div[class$='-connectWallet']
-> svg {
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet']
+  > svg {
   width: 1rem;
 }
 
@@ -374,7 +376,7 @@ div[class$='-bridgeContent']
 div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-elevated'] {
   margin: 1rem;
   font-weight: bold;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   width: calc(100% - 2rem);
 }
 
@@ -408,15 +410,15 @@ main.light
   > div[class$='-amtRow']
   > div[class$='-balance']
   * {
-  color: #1B1B1F;
+  color: #1b1b1f;
 }
 
 main.light div[class$='-input'] {
-  border: 1px solid #757680
+  border: 1px solid #757680;
 }
 
 main.light div[class$='-input']:hover {
-  border-color: #757680
+  border-color: #757680;
 }
 
 main.light
@@ -440,14 +442,14 @@ main.light
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
-  background-color: #EFEDF1;
+  background-color: #efedf1;
 }
 
 main.light
-  div[class$='-bridgeContent'] 
-  > div[class$='-container'] 
-  > div[class*='-header']{
-    border: 1px solid #757680
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class*='-header'] {
+  border: 1px solid #757680;
 }
 
 main.light
@@ -481,15 +483,15 @@ main.light
   > div[class$='-token']
   > div[class*='-inputField']
   * {
-  color: #1B1B1F;
+  color: #1b1b1f;
 }
 
 main.light
-  div[class$='-bridgeContent'] 
-  > div[class$='-body'] 
+  div[class$='-bridgeContent']
+  > div[class$='-body']
   > div[class*='-elevated'] {
-    background-color: #0053DB;
-    color: #FFF;
+  background-color: #0053db;
+  color: #fff;
 }
 
 /* THEMING - DARK */
@@ -521,19 +523,19 @@ main.dark
 }
 
 main.dark div[class$='-input'] {
-  border: 1px solid #8F909A
+  border: 1px solid #8f909a;
 }
 
 main.dark div[class$='-input']:hover {
-  border-color: #8F909A
+  border-color: #8f909a;
 }
 
 main.dark
-div[class$='-bridgeContent'] 
-  > div[class$='-container'] 
-  > div[class*='-header']{
-    border: 1px solid #8F909A
-  }
+  div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class*='-header'] {
+  border: 1px solid #8f909a;
+}
 
 main.dark
   div[class$='-input']
@@ -570,9 +572,9 @@ main.dark
 }
 
 main.dark
-div[class$='-bridgeContent'] 
-> div[class$='-body'] 
-> div[class*='-elevated'] {
-  color: #002A78;
-  background-color: #B4C5FF;
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-elevated'] {
+  color: #002a78;
+  background-color: #b4c5ff;
 }
