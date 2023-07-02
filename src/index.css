@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Share+Tech+Mono&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Roboto Mono', 'Share Tech Mono', monospace;
 }
 
 a {
@@ -18,8 +19,8 @@ div[class$='-input']
   > div[class$='-inputs']
   > div[class$='-networkRow']
   > div[class$='-networkSmall'] {
-  left: -2rem;
-  top: -5.5rem;
+  left: 0rem;
+  top: -0.125rem;
   position: absolute;
 }
 
@@ -49,9 +50,23 @@ div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
   > div[class$='-network'] {
-  top: 0;
-  left: 0;
+  gap: 1rem;
+  top: 31px;
+  width: 30%;
+  z-index: 1;
   position: absolute;
+  left: calc(1rem + 8px);
+}
+
+@media screen and (max-width: 414px) {
+  div[class$='-input']
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-network'] {
+    top: 40px;
+    position: absolute;
+    left: calc(2rem + 8px);
+  }
 }
 
 div[class$='-input']
@@ -65,11 +80,33 @@ div[class$='-input']
   > div[class$='-content']
   > div[class$='-network']
   > div[class*='-networkTile'] {
-  gap: 0rem;
-  margin-left: 1rem;
-  border-radius: 2rem;
+  gap: 1.6rem;
+  height: 56px;
   flex-direction: row;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
+  border-radius: 0.25rem;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 414px) {
+  div[class$='-input']
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-inputs']
+    > div[class$='-networkRow']
+    > div[class$='-networkSmall'],
+  div[class$='-input']
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-network']
+    > div[class*='-networkTile'] {
+    gap: 1.6rem;
+    height: 10px;
+    flex-direction: row;
+    padding: 1rem 1rem;
+    border-radius: 0.25rem;
+    justify-content: flex-start;
+  }
 }
 
 div[class$='-input']
@@ -121,10 +158,13 @@ div[class$='-input']
 
 /* START - INPUT */
 div[class$='-input'] {
-  padding: 1rem;
-  margin: 1.3rem 1rem;
-  border-radius: 3rem;
+  height: 71px;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
   width: calc(100% - 2rem);
+  margin: 0.5rem 1rem 1.3rem;
+  border: 0.5px solid #45464f;
+  background-color: transparent;
 }
 
 div[class$='-input'] > div[class$='-outerContainer'] > div[class$='-content'] {
@@ -155,6 +195,31 @@ div[class$='-input']
   > div[class$='-amount']
   > div[class*='-inputField'] {
   background: none;
+  margin-left: 45%;
+}
+
+main.tablet
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-amount']
+  > div[class*='-inputField'] {
+  background: none;
+  margin-left: 45%;
+}
+
+main.mobile
+div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-amtRow']
+  > div[class$='-amount']
+  > div[class*='-inputField'] {
+  background: none;
+  margin-left: 70%;
 }
 
 div[class$='-input']
@@ -175,8 +240,11 @@ div[class$='-input']
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
+  height: 3.375rem;
   flex-direction: row;
-  border-radius: 1.5rem;
+  align-items: center;
+  border-radius: 0.25rem;
+  margin-right: -0.625rem;
 }
 
 div[class$='-input']
@@ -197,7 +265,7 @@ div[class$='-input']
   > div[class$='-amtRow']
   > div[class$='-balance'] {
   right: 0;
-  top: -2.2rem;
+  top: -2.4rem;
   overflow: hidden;
   position: absolute;
   border-radius: 1.5rem;
@@ -211,8 +279,8 @@ div[class$='-input']
   > div[class$='-balance']
   > div[class$='-inputField'] {
   font-size: 0.6rem;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
   padding: 0.25rem 0.5rem;
 }
 
@@ -237,6 +305,16 @@ div[class$='-input']
   > div[class$='-label']::after {
   content: ': ';
   margin-right: 0.25rem;
+}
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class*='-header'] {
+  margin: 0 auto;
+  font-size: 1rem;
+  height: 4.4375rem;
+  width: calc(100% - 2rem);
+  background-color: transparent;
 }
 /* END - INPUT */
 
@@ -263,12 +341,13 @@ div[class$='-bg'] div[class$='-bridgeContent'] {
 /* START - FORM */
 div[class$='-bridgeContent'] > div[class$='-container'] {
   position: relative;
+  margin-bottom: 2rem;
 }
 
 div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class*='-header'] {
-  border-radius: 0;
+  border-radius: 0.25rem;
 }
 
 div[class$='-bridgeContent']
@@ -282,6 +361,7 @@ div[class$='-bridgeContent']
   > div[class$='-errorContainer']
   > div[class$='-header'] {
   padding-right: 1rem;
+  margin-bottom: 0.5rem;
   justify-content: flex-end;
 }
 
@@ -292,13 +372,37 @@ div[class$='-bridgeContent']
   > div[class$='-headerTitle'] {
   display: none;
 }
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet'] {
+  left: 1rem;
+  padding: 0;
+  font-size: 13px;
+  position: absolute;
+  margin-bottom: -1rem;
+  border-radius: 0.25rem;
+  background-color: transparent;
+}
+
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div[class$='-connectWallet']
+  > svg {
+  width: 1rem;
+}
+
 /* END - FORM */
 
 /* START - FOOTER */
 div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-elevated'] {
   margin: 1rem;
   font-weight: bold;
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   width: calc(100% - 2rem);
 }
 
@@ -332,21 +436,15 @@ main.light
   > div[class$='-amtRow']
   > div[class$='-balance']
   * {
-  color: #ffffff;
-  background-color: rgb(66, 130, 168);
-}
-
-main.light div[class$='-bg'] div[class$='-bridgeContent'] {
-  background-color: rgb(241, 241, 241);
+  color: #1b1b1f;
 }
 
 main.light div[class$='-input'] {
-  background-color: rgb(227, 228, 229);
-  border: 1px solid rgb(227, 228, 229);
+  border: 1px solid #757680;
 }
 
 main.light div[class$='-input']:hover {
-  border-color: rgb(66, 130, 168);
+  border-color: #757680;
 }
 
 main.light
@@ -363,12 +461,6 @@ main.light
   > div[class$='-network']
   > div[class*='-networkTile'],
 main.light
-  div[class$='-bridgeContent']
-  > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet'],
-main.light
   div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
@@ -376,37 +468,14 @@ main.light
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
-  background-color: rgb(66, 130, 168);
+  background-color: #efedf1;
 }
 
 main.light
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall']:hover,
-main.light
   div[class$='-bridgeContent']
   > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet']:hover,
-main.light
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-token']
-  > div[class*='-inputField']:hover,
-main.light
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile']:hover {
-  background-color: rgb(111, 188, 240);
+  > div[class*='-header'] {
+  border: 1px solid #757680;
 }
 
 main.light
@@ -440,7 +509,15 @@ main.light
   > div[class$='-token']
   > div[class*='-inputField']
   * {
-  color: #ffffff;
+  color: #1b1b1f;
+}
+
+main.light
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-elevated'] {
+  background-color: #0053db;
+  color: #fff;
 }
 
 /* THEMING - DARK */
@@ -469,80 +546,21 @@ main.dark
   > div[class$='-balance']
   * {
   color: #ffffff;
-  background-color: rgb(66, 130, 168);
-}
-
-main.dark div[class$='-bg'] div[class$='-bridgeContent'] {
-  background-color: rgb(22, 42, 67);
 }
 
 main.dark div[class$='-input'] {
-  background-color: rgb(23, 59, 111);
-  border: 1px solid rgb(23, 59, 111);
+  border: 1px solid #8f909a;
 }
 
 main.dark div[class$='-input']:hover {
-  border-color: rgb(66, 130, 168);
+  border-color: #8f909a;
 }
 
 main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall'],
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile'],
-main.dark
   div[class$='-bridgeContent']
   > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet'],
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-token']
-  > div[class*='-inputField'] {
-  background-color: rgb(66, 130, 168);
-}
-
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-networkSmall']:hover,
-main.dark
-  div[class$='-bridgeContent']
-  > div[class$='-container']
-  > div[class$='-errorContainer']
-  > div[class$='-header']
-  > div[class$='-connectWallet']:hover,
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-inputs']
-  > div[class$='-networkRow']
-  > div[class$='-token']
-  > div[class*='-inputField']:hover,
-main.dark
-  div[class$='-input']
-  > div[class$='-outerContainer']
-  > div[class$='-content']
-  > div[class$='-network']
-  > div[class*='-networkTile']:hover {
-  background-color: rgb(111, 188, 240);
+  > div[class*='-header'] {
+  border: 1px solid #8f909a;
 }
 
 main.dark
@@ -577,4 +595,36 @@ main.dark
   > div[class*='-inputField']
   * {
   color: #ffffff;
+}
+
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-networkSmall'],
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-network']
+  > div[class*='-networkTile'],
+main.dark
+  div[class$='-input']
+  > div[class$='-outerContainer']
+  > div[class$='-content']
+  > div[class$='-inputs']
+  > div[class$='-networkRow']
+  > div[class$='-token']
+  > div[class*='-inputField'] {
+    background-color: rgba(255, 255, 255, 0.047);
+}
+
+main.dark
+  div[class$='-bridgeContent']
+  > div[class$='-body']
+  > div[class*='-elevated'] {
+  color: #002a78;
+  background-color: #b4c5ff;
 }
