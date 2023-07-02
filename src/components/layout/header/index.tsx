@@ -1,149 +1,37 @@
-import { useTheme } from '@stylin.js/react';
-import { FC, useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Box } from '@interest-protocol/ui-kit';
+import { FC } from 'react';
 
-import { Routes, RoutesEnum } from '../../../constants';
-import { Box, Typography } from '../../../elements';
-import useEventListener from '../../../hooks/use-event-listener';
-import { LogoSVG, MoonSVG, SunSVG } from '../../svg';
-import SwitchLang from '../../switch-lang';
-import MobileMenu from './mobile-menu';
+import { LogoSVG } from '../../svg';
+import Menu from './menu';
+import Navbar from './navbar';
 
-const Header: FC = () => {
-  const { t } = useTranslation();
-  const { setDark, dark } = useTheme() as any;
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  const handleSetDesktop = useCallback(() => {
-    const mediaIsMobile = !window.matchMedia('(min-width: 55em)').matches;
-    setIsMobile(mediaIsMobile);
-  }, []);
-
-  useEventListener('resize', handleSetDesktop, true);
-
-  const handleChangeTheme = () => setDark(!dark);
-
-  return (
-    <Box>
-      <Box
-        py="M"
-        as="header"
-        bg="foreground"
-        px={['M', 'L']}
-        alignItems="center"
-        justifyContent="space-between"
-        display={['flex', 'flex', 'flex', 'grid']}
-        gridTemplateColumns="repeat(3, 1fr)"
-      >
-        <Box display="flex" alignItems="center">
-          <a href={Routes[RoutesEnum.Home]} target="_blank" rel="noreferrer">
-            <Box
-              mr="L"
-              color="text"
-              width="2.5rem"
-              height="2.5rem"
-              maxWidth="50px"
-              maxHeight="50px"
-              cursor="pointer"
-              nHover={{ color: 'accent' }}
-              nActive={{ color: 'accentActive' }}
-            >
-              <LogoSVG
-                maxHeight="2.5rem"
-                maxWidth="2.5rem"
-                width="100%"
-                aria-label="Logo"
-                fill="currentColor"
-              />
-            </Box>
-          </a>
+const Header: FC = () => (
+  <Box
+    variant="container"
+    pt={['s', 's', 's', '2.5rem']}
+    pb={['s', 's', 's', 'xl']}
+  >
+    <Box
+      width="100%"
+      display="flex"
+      gridColumn="1/-1"
+      alignItems="center"
+      justifyContent="space-between"
+    >
+      <Box display="flex" alignItems="center">
+        <Box color="primary" py="m" px="s">
+          <LogoSVG
+            width="100%"
+            fill="currentColor"
+            maxWidth="1.875rem"
+            maxHeight="1.875rem"
+          />
         </Box>
-        <Box
-          alignItems="center"
-          justifyContent="center"
-          display={['none', 'none', 'flex']}
-        >
-          <a href={Routes[RoutesEnum.Swap]} target="_blank" rel="noreferrer">
-            <Typography
-              px="XL"
-              cursor="pointer"
-              variant="normal"
-              borderRight="1px solid"
-              borderColor="bottomBackground"
-              nHover={{ color: 'accentActive' }}
-              textTransform="uppercase"
-            >
-              Swap
-            </Typography>
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={Routes[RoutesEnum.Liquidity]}
-          >
-            <Typography
-              px="XL"
-              cursor="pointer"
-              variant="normal"
-              borderRight="1px solid"
-              textTransform="uppercase"
-              borderColor="bottomBackground"
-              nHover={{ color: 'accentActive' }}
-            >
-              {t('common.liquidity')}
-            </Typography>
-          </a>
-          <Typography
-            px="XL"
-            cursor="pointer"
-            variant="normal"
-            nHover={{ color: 'accentActive' }}
-            textTransform="uppercase"
-          >
-            BRIDGE
-          </Typography>
-        </Box>
-        <Box display="flex" justifyContent="flex-end" alignItems="center">
-          <Box display="flex" justifyContent="flex-end" alignItems="stretch">
-            {!isMobile && (
-              <Box display="flex" alignItems="stretch">
-                <SwitchLang isMobile={false} />
-                <Box
-                  px="S"
-                  height="2.8rem"
-                  alignItems="center"
-                  display="inline-flex"
-                  justifyContent="center"
-                  onClick={handleChangeTheme}
-                  color="text"
-                  cursor="pointer"
-                  nHover={{ color: 'accent' }}
-                >
-                  {!dark ? (
-                    <MoonSVG
-                      width="1rem"
-                      maxHeight="3rem"
-                      maxWidth="3rem"
-                      fill="currentColor"
-                    />
-                  ) : (
-                    <SunSVG
-                      width="1rem"
-                      maxHeight="3rem"
-                      maxWidth="3rem"
-                      fill="currentColor"
-                    />
-                  )}
-                </Box>
-              </Box>
-            )}
-          </Box>
-        </Box>
-        {isMobile && <MobileMenu dark={dark} changeTheme={handleChangeTheme} />}
+        <Navbar />
       </Box>
+      <Menu />
     </Box>
-  );
-};
+  </Box>
+);
 
 export default Header;
