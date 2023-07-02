@@ -1,4 +1,8 @@
-import { ThemeProvider } from '@stylin.js/react';
+import {
+  darkTheme,
+  lightTheme,
+  ThemeProvider as InterestThemeProvider,
+} from '@interest-protocol/ui-kit';
 import WormholeBridge, {
   WormholeConnectConfig,
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -7,7 +11,6 @@ import WormholeBridge, {
 import { FC, useState } from 'react';
 
 import { Layout } from './components';
-import { DAppDarkTheme, DAppLightTheme } from './design-system';
 
 const config: WormholeConnectConfig = {
   env: 'mainnet',
@@ -17,13 +20,13 @@ const App: FC = () => {
   const [dark, setDark] = useState(false);
 
   return (
-    <ThemeProvider
-      theme={{ setDark, ...(dark ? DAppDarkTheme : DAppLightTheme) }}
+    <InterestThemeProvider
+      theme={{ setDark, ...(dark ? darkTheme : lightTheme) }}
     >
       <Layout pageTitle="pageTitle">
         <WormholeBridge config={config} />
       </Layout>
-    </ThemeProvider>
+    </InterestThemeProvider>
   );
 };
 

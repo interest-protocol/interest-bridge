@@ -5,65 +5,19 @@ import { SVGProps } from './svg.types';
 const Bridge: FC<SVGProps> = ({ maxWidth, maxHeight, ...props }) => (
   <svg
     style={{ maxWidth, maxHeight }}
-    viewBox="0 0 48 48"
+    viewBox="0 0 24 24"
     fill="none"
     {...props}
   >
-    <path
-      d="M8 13C8 13 14 23 24 23C34 23 40 13 40 13"
-      stroke="currentColor"
-      strokeWidth="4"
-    />
-    <path
-      d="M8 10V38"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M40 10V38"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M4 30.5C4 30.5 16.1877 29.9026 24 30C31.8196 30.0975 44 31 44 31"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <path
-      d="M16 21V30"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <path
-      d="M24 23V30"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <path
-      d="M32 21V30"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <path
-      d="M8 13L4 18"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
-    <path
-      d="M44 18L40 13"
-      stroke="currentColor"
-      strokeWidth="4"
-      strokeLinecap="round"
-    />
+    <g id="Icon">
+      <path
+        id="Union"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M16.5001 8.56066L16.5022 8.5586L17.0069 9.0633C17.5927 9.64909 17.5927 10.5988 17.0069 11.1846L14.6261 13.5654L10.4365 9.37575L12.8173 6.99501C13.4031 6.40922 14.3528 6.40922 14.9386 6.99501L15.4415 7.49794L15.4395 7.5L16.5001 8.56066ZM9.37586 8.31509L8.62511 7.56434L7.56445 8.625L8.3152 9.37575L5.93623 11.7547C4.76466 12.9263 4.76466 14.8258 5.93623 15.9974L6.43916 16.5003L1.18945 21.75L2.25011 22.8107L7.49982 17.561L8.00452 18.0657C9.17609 19.2372 11.0756 19.2372 12.2472 18.0657L14.6261 15.6867L15.3751 16.4357L16.4358 15.375L15.6868 14.626L18.0675 12.2453C19.2391 11.0737 19.2391 9.17421 18.0675 8.00264L17.5628 7.49794L22.8108 2.25L21.7501 1.18934L16.5022 6.43728L15.9992 5.93435C14.8277 4.76278 12.9282 4.76278 11.7566 5.93435L9.37586 8.31509ZM13.5655 14.626L11.1865 17.005C10.6007 17.5908 9.65097 17.5908 9.06518 17.005L8.56048 16.5003L8.56077 16.5L7.50011 15.4393L7.49982 15.4396L6.99689 14.9367C6.41111 14.3509 6.41111 13.4012 6.99689 12.8154L9.37586 10.4364L13.5655 14.626ZM18.2758 13.3013L21.9488 14.5257L21.4744 15.9487L17.8014 14.7243L18.2758 13.3013ZM6.19879 9.27566L2.52576 8.05132L2.05142 9.47434L5.72445 10.6987L6.19879 9.27566ZM9.47445 2.05131L10.6988 5.72433L9.27576 6.19867L8.05142 2.52565L9.47445 2.05131ZM15.9488 21.4743L14.7244 17.8013L13.3014 18.2757L14.5258 21.9487L15.9488 21.4743Z"
+        fill="currentColor"
+      />
+    </g>
   </svg>
 );
 
