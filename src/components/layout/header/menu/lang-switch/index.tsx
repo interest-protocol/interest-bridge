@@ -35,17 +35,16 @@ const LangSwitch: FC = () => {
     <RefBox
       id={BOX_ID}
       display="flex"
+      border="1px solid"
+      borderRadius="100%"
       position="relative"
+      height="fit-content"
       ref={connectedBoxRef}
       flexDirection="column"
       justifyContent="center"
-      borderRadius="100%"
-      border="1px solid"
       transition="background-color .5s"
       borderColor={colors['outline.outlineVariant']}
-      nHover={{
-        bg: colors['outline.outlineVariant'],
-      }}
+      nHover={{ bg: colors['outline.outlineVariant'] }}
     >
       <Button
         variant="icon"

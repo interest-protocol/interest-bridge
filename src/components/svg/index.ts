@@ -14,6 +14,7 @@ export { default as GitBookSVG } from './git-book';
 export { default as GithubSVG } from './github';
 export { default as HomeSVG } from './home';
 export { default as InstagramSVG } from './instagram';
+export { default as LendSVG } from './lend';
 export { default as LinkedInSVG } from './linkedIn';
 export { default as LiquiditySVG } from './liquidity';
 export { default as LogoSVG } from './logo';
