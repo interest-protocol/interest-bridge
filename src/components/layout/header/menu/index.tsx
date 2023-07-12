@@ -44,9 +44,9 @@ const Menu: FC = () => {
   }, []);
 
   return (
-    <Box position="relative" width={['100%', '100%', '100%', 'unset']}>
+    <Box position="relative" width="auto">
       <Box
-        zIndex="20"
+        zIndex="2"
         display="flex"
         position="relative"
         flexDirection="row-reverse"

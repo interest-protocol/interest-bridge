@@ -2,6 +2,7 @@ import { Routes, RoutesEnum } from '../../../../constants';
 import {
   BridgeSVG,
   FarmSVG,
+  LendSVG,
   NewTokenSVG,
   PoolSVG,
   SwapSVG,
@@ -25,6 +26,12 @@ export const SIDEBAR_ITEMS = [
     Icon: PoolSVG,
     name: 'common.pool',
     path: Routes[RoutesEnum.DEXPool],
+    disabled: false,
+  },
+  {
+    Icon: LendSVG,
+    name: 'common.lend',
+    path: Routes[RoutesEnum.Lend],
     disabled: false,
   },
   {

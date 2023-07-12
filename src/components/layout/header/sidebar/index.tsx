@@ -1,16 +1,9 @@
-import {
-  Box,
-  SwitchButton,
-  Theme,
-  Typography,
-  useTheme,
-} from '@interest-protocol/ui-kit';
+import { Box, Typography } from '@interest-protocol/ui-kit';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 } from 'uuid';
 
 import { Routes, RoutesEnum } from '../../../../constants';
-import { AppTheme } from '../../../../interface';
 import { capitalize } from '../../../../utils';
 import { LogoSVG } from '../../../svg';
 import { SIDEBAR_ITEMS } from './sidebar.data';
@@ -18,7 +11,6 @@ import { SIDEBAR_ITEMS } from './sidebar.data';
 const Sidebar: FC = () => {
   const { t } = useTranslation();
   const [pathName, setPathName] = useState('/');
-  const { dark, setDark } = useTheme() as AppTheme<Theme>;
 
   useEffect(() => {
     if (window) {
@@ -32,6 +24,7 @@ const Sidebar: FC = () => {
       p="2xl"
       width="100%"
       display="flex"
+      overflowY="auto"
       maxWidth="20rem"
       bg="surface.container"
       flexDirection="column"
@@ -72,28 +65,6 @@ const Sidebar: FC = () => {
             </a>
           ))}
         </Box>
-      </Box>
-      <Box display="flex" justifyContent="center" gap="l">
-        <Typography
-          variant="medium"
-          color="onSurface"
-          textTransform="capitalize"
-        >
-          {t('common.light')}
-        </Typography>
-        <SwitchButton
-          name="theme"
-          size="medium"
-          defaultValue={dark}
-          onChange={() => setDark(!dark)}
-        />
-        <Typography
-          variant="medium"
-          color="onSurface"
-          textTransform="capitalize"
-        >
-          {t('common.dark')}
-        </Typography>
       </Box>
     </Box>
   );
