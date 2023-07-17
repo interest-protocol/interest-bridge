@@ -24,6 +24,17 @@ div[class$='-input']
   position: absolute;
 }
 
+@media screen and (max-width: 25rem) {
+  div[class$='-input']
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-inputs']
+    > div[class$='-networkRow']
+    > div[class$='-token'] {
+    flex: 1;
+  }
+}
+
 div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
@@ -51,21 +62,17 @@ div[class$='-input']
   > div[class$='-content']
   > div[class$='-network'] {
   gap: 1rem;
-  top: 31px;
-  width: 30%;
-  z-index: 1;
-  position: absolute;
-  left: calc(1rem + 8px);
+  white-space: nowrap;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 25rem) {
   div[class$='-input']
     > div[class$='-outerContainer']
     > div[class$='-content']
     > div[class$='-network'] {
     top: 40px;
+    left: 1.5rem;
     position: absolute;
-    left: calc(2rem + 8px);
   }
 }
 
@@ -81,14 +88,14 @@ div[class$='-input']
   > div[class$='-network']
   > div[class*='-networkTile'] {
   gap: 1.6rem;
-  height: 56px;
+  padding: 1rem;
+  height: 3.5rem;
   flex-direction: row;
-  padding: 1rem 1rem;
   border-radius: 0.25rem;
   justify-content: flex-start;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 25rem) {
   div[class$='-input']
     > div[class$='-outerContainer']
     > div[class$='-content']
@@ -101,7 +108,6 @@ div[class$='-input']
     > div[class$='-network']
     > div[class*='-networkTile'] {
     gap: 1.6rem;
-    height: 10px;
     flex-direction: row;
     padding: 1rem 1rem;
     border-radius: 0.25rem;
@@ -158,11 +164,10 @@ div[class$='-input']
 
 /* START - INPUT */
 div[class$='-input'] {
-  height: 71px;
+  width: 100%;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  width: calc(100% - 2rem);
-  margin: 0.5rem 1rem 1.3rem;
+  margin: 0.5rem 0 1.3rem;
   border: 0.5px solid #45464f;
   background-color: transparent;
 }
@@ -187,6 +192,19 @@ div[class$='-input']
   flex: 1;
 }
 
+@media screen and (max-width: 25rem) {
+  div[class$='-input']
+    > div[class$='-outerContainer']
+    > div[class$='-content']
+    > div[class$='-inputs']
+    > div[class$='-amtRow'] {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    margin-left: 10rem;
+  }
+}
+
 div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
@@ -195,11 +213,10 @@ div[class$='-input']
   > div[class$='-amount']
   > div[class*='-inputField'] {
   background: none;
-  margin-left: 45%;
 }
 
 main.tablet
-div[class$='-input']
+  div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
   > div[class$='-inputs']
@@ -207,11 +224,10 @@ div[class$='-input']
   > div[class$='-amount']
   > div[class*='-inputField'] {
   background: none;
-  margin-left: 45%;
 }
 
 main.mobile
-div[class$='-input']
+  div[class$='-input']
   > div[class$='-outerContainer']
   > div[class$='-content']
   > div[class$='-inputs']
@@ -219,7 +235,6 @@ div[class$='-input']
   > div[class$='-amount']
   > div[class*='-inputField'] {
   background: none;
-  margin-left: 70%;
 }
 
 div[class$='-input']
@@ -310,10 +325,11 @@ div[class$='-input']
 div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class*='-header'] {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   font-size: 1rem;
-  height: 4.4375rem;
-  width: calc(100% - 2rem);
+  min-height: 4rem;
   background-color: transparent;
 }
 /* END - INPUT */
@@ -360,9 +376,10 @@ div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class$='-errorContainer']
   > div[class$='-header'] {
-  padding-right: 1rem;
+  margin: 0;
+  padding: 0;
   margin-bottom: 0.5rem;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 div[class$='-bridgeContent']
@@ -377,11 +394,15 @@ div[class$='-bridgeContent']
   > div[class$='-container']
   > div[class$='-errorContainer']
   > div[class$='-header']
+  > div[class$='-connectWallet'],
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class$='-errorContainer']
+  > div[class$='-header']
+  > div
   > div[class$='-connectWallet'] {
-  left: 1rem;
   padding: 0;
-  font-size: 13px;
-  position: absolute;
+  font-size: 0.9rem;
   margin-bottom: -1rem;
   border-radius: 0.25rem;
   background-color: transparent;
@@ -399,8 +420,32 @@ div[class$='-bridgeContent']
 /* END - FORM */
 
 /* START - FOOTER */
+div[class$='-bridgeContent']
+  > div[class$='-container']
+  > div[class*='-header'] {
+  padding: 1rem;
+}
+
+div[class$='-container'] > div[class*='-banner'] {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  border-top-left-radius: 0.25rem !important;
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+}
+
+div[class$='-bridgeContent'] > div[class$='-body'] {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+div[class$='-bridgeContent'] > div[class$='-body'] > div {
+  margin: 0;
+}
+
 div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-elevated'] {
-  margin: 1rem;
   font-weight: bold;
   border-radius: 0.25rem;
   width: calc(100% - 2rem);
@@ -414,6 +459,10 @@ div[class$='-bridgeContent'] > div[class$='-body'] > div[class*='-poweredBy'] {
 /* THEMING - LIGHT */
 main.light * {
   color: #282828;
+}
+
+main.light div[class$='-container'] > div[class*='-banner'] {
+  background-color: #efedf1;
 }
 
 main.light
@@ -512,12 +561,29 @@ main.light
   color: #1b1b1f;
 }
 
+main.light div[class*='-content'] div[class*='-elevated'] {
+  background-color: #0053db;
+  color: #fff;
+}
+
 main.light
   div[class$='-bridgeContent']
   > div[class$='-body']
   > div[class*='-elevated'] {
   background-color: #0053db;
   color: #fff;
+}
+
+main.light .MuiSlider-track {
+  color: #0053db;
+}
+
+main.light .MuiSlider-rail {
+  background-color: rgb(48, 76, 112) !important;
+}
+
+main.dark .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  background-color: #0053db;
 }
 
 /* THEMING - DARK */
@@ -618,7 +684,12 @@ main.dark
   > div[class$='-networkRow']
   > div[class$='-token']
   > div[class*='-inputField'] {
-    background-color: rgba(255, 255, 255, 0.047);
+  background-color: rgba(255, 255, 255, 0.047);
+}
+
+main.dark div[class*='-content'] div[class*='-elevated'] {
+  color: #002a78;
+  background-color: #b4c5ff;
 }
 
 main.dark
@@ -626,5 +697,17 @@ main.dark
   > div[class$='-body']
   > div[class*='-elevated'] {
   color: #002a78;
+  background-color: #b4c5ff;
+}
+
+main.dark .MuiSlider-track {
+  color: #b4c5ff;
+}
+
+main.dark .MuiSlider-rail {
+  background-color: rgb(48, 76, 112) !important;
+}
+
+main.dark .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
   background-color: #b4c5ff;
 }
