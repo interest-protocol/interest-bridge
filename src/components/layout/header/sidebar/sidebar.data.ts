@@ -2,15 +2,20 @@ import { Routes, RoutesEnum } from '../../../../constants';
 import {
   BridgeSVG,
   FarmSVG,
+  FaucetSVG,
+  HomeSVG,
+  LendSVG,
   NewTokenSVG,
   PoolSVG,
   SwapSVG,
 } from '../../../svg';
-import Home from '../../../svg/home';
+import { MenuListItemProps } from './sidebar.types';
 
-export const SIDEBAR_ITEMS = [
+export const SIDEBAR_ITEMS: ReadonlyArray<
+  Omit<MenuListItemProps, 'setIsCollapsed' | 'isCollapsed'>
+> = [
   {
-    Icon: Home,
+    Icon: HomeSVG,
     name: 'common.home',
     path: Routes[RoutesEnum.DApp],
     disabled: true,
@@ -28,15 +33,34 @@ export const SIDEBAR_ITEMS = [
     disabled: false,
   },
   {
+    Icon: LendSVG,
+    name: 'common.lend',
+    path: Routes[RoutesEnum.Lend],
+    disabled: false,
+  },
+  {
     Icon: FarmSVG,
     name: 'common.farm',
-    path: Routes[RoutesEnum.Liquidity],
+    path: Routes[RoutesEnum.LiquidityFarms],
+    disabled: false,
+    alpha: true,
+  },
+  {
+    Icon: FarmSVG,
+    name: 'common.farm',
+    path: Routes[RoutesEnum.Farms],
     disabled: false,
   },
   {
     Icon: NewTokenSVG,
     name: 'common.createToken',
-    path: Routes[RoutesEnum.NewToken],
+    path: Routes[RoutesEnum.CreateToken],
+    disabled: false,
+  },
+  {
+    Icon: FaucetSVG,
+    name: 'common.faucet',
+    path: Routes[RoutesEnum.Faucet],
     disabled: false,
   },
   {
@@ -44,5 +68,15 @@ export const SIDEBAR_ITEMS = [
     name: 'common.bridge',
     path: Routes[RoutesEnum.Bridge],
     disabled: false,
+    accordionList: [
+      {
+        name: 'common.wormhole',
+        path: Routes[RoutesEnum.Bridge],
+      },
+      {
+        name: 'common.celer',
+        path: Routes[RoutesEnum.Bridge],
+      },
+    ],
   },
 ];
