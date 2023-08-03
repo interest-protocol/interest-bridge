@@ -1,21 +1,13 @@
-import {
-  Box,
-  SwitchButton,
-  Theme,
-  Typography,
-  useTheme,
-} from '@interest-protocol/ui-kit';
+import { Box, Typography } from '@interest-protocol/ui-kit';
 import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 } from 'uuid';
 
-import { AppTheme } from '../../../../../interface';
 import { SIDEBAR_ITEMS } from '../../sidebar/sidebar.data';
 
 const MainMenu: FC = () => {
   const { t } = useTranslation();
   const [pathName, setPathName] = useState('/');
-  const { dark, setDark } = useTheme() as AppTheme<Theme>;
 
   useEffect(() => {
     if (window) {
@@ -59,28 +51,6 @@ const MainMenu: FC = () => {
             </a>
           ))}
         </Box>
-      </Box>
-      <Box display="flex" justifyContent="center" gap="l" mb="4.188rem">
-        <Typography
-          variant="medium"
-          color="onSurface"
-          textTransform="capitalize"
-        >
-          {t('common.light')}
-        </Typography>
-        <SwitchButton
-          name="theme"
-          size="medium"
-          defaultValue={dark}
-          onChange={() => setDark(!dark)}
-        />
-        <Typography
-          variant="medium"
-          color="onSurface"
-          textTransform="capitalize"
-        >
-          {t('common.dark')}
-        </Typography>
       </Box>
     </Box>
   );

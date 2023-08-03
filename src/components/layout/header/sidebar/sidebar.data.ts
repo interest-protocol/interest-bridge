@@ -2,7 +2,6 @@ import { Routes, RoutesEnum } from '../../../../constants';
 import {
   BridgeSVG,
   FarmSVG,
-  FaucetSVG,
   HomeSVG,
   LendSVG,
   NewTokenSVG,
@@ -41,32 +40,20 @@ export const SIDEBAR_ITEMS: ReadonlyArray<
   {
     Icon: FarmSVG,
     name: 'common.farm',
-    path: Routes[RoutesEnum.LiquidityFarms],
+    path: Routes[RoutesEnum.Liquidity],
     disabled: false,
     alpha: true,
   },
   {
-    Icon: FarmSVG,
-    name: 'common.farm',
-    path: Routes[RoutesEnum.Farms],
-    disabled: false,
-  },
-  {
     Icon: NewTokenSVG,
     name: 'common.createToken',
-    path: Routes[RoutesEnum.CreateToken],
-    disabled: false,
-  },
-  {
-    Icon: FaucetSVG,
-    name: 'common.faucet',
-    path: Routes[RoutesEnum.Faucet],
+    path: Routes[RoutesEnum.NewToken],
     disabled: false,
   },
   {
     Icon: BridgeSVG,
     name: 'common.bridge',
-    path: Routes[RoutesEnum.Bridge],
+    path: '/',
     disabled: false,
     accordionList: [
       {

@@ -81,7 +81,7 @@ const SidebarMenuListItem: FC<MenuListItemProps> = ({
       >
         {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
         <a
-          href={disabled || !accordionList ? undefined : path}
+          href={!(disabled || !accordionList) ? undefined : path}
           target="_blank"
           rel="noreferrer"
           key={v4()}
@@ -108,7 +108,7 @@ const SidebarMenuListItem: FC<MenuListItemProps> = ({
               bg: !disabled && 'surface.containerHighest',
             }}
             justifyContent={isCollapsed ? 'center' : 'space-between'}
-            alignItems={isCollapsed ? 'center' : 'unset'}
+            alignItems="center"
             mx="auto"
           >
             <Box display="flex">

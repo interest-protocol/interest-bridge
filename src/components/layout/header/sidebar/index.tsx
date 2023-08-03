@@ -1,5 +1,5 @@
 import { Box, Motion } from '@interest-protocol/ui-kit';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { useLocalStorage } from '../../../../hooks/use-local-storage';
 import SidebarFooter from './footer';
@@ -9,6 +9,11 @@ import SidebarMenuList from './menu-list';
 const Sidebar: FC = () => {
   const [isMenuCollapse] = useLocalStorage('brigde-menu-collapse', true);
   const [isCollapsed, setIsCollapsed] = useState(isMenuCollapse);
+
+  useEffect(() => {
+    setIsCollapsed(isMenuCollapse);
+  }, [isMenuCollapse]);
+
   return (
     <Motion
       pb="0"

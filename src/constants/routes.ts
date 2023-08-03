@@ -7,12 +7,14 @@ export enum RoutesEnum {
   DApp = 'dapp',
   Swap = 'swap',
   Farms = 'farms',
+  Lend = 'lend',
   FarmDetails = 'farms-details',
   DEXPool = 'dex-pool',
   DEXFindPool = 'dex-find-pool',
   DEXPoolDetails = 'dex-pool-details',
   Bridge = 'bridge',
-  Liquidity = 'liquidity',
+  Liquidity = 'liquidity-farms',
+  LiquidityFarmsDetails = 'liquidity-farms-details',
   Faucet = 'faucet',
   NewToken = 'new-token',
 }
@@ -26,6 +28,7 @@ export const Routes: Record<RoutesEnum, string> = {
   [RoutesEnum.DApp]: 'https://interestprotocol.com/dapp',
   [RoutesEnum.Swap]: 'https://interestprotocol.com/dapp/swap',
   [RoutesEnum.Farms]: 'https://interestprotocol.com/dapp/farms',
+  [RoutesEnum.Lend]: 'https://www.interestprotocol.com/dapp/alpha/lending',
   [RoutesEnum.FarmDetails]: 'https://interestprotocol.com/dapp/farms/details',
   [RoutesEnum.DEXPool]: 'https://interestprotocol.com/dapp/dex/pool',
   [RoutesEnum.DEXFindPool]: 'https://interestprotocol.com/dapp/dex/pool/find',
@@ -34,5 +37,7 @@ export const Routes: Record<RoutesEnum, string> = {
   [RoutesEnum.Faucet]: 'https://interestprotocol.com/dapp/faucet',
   [RoutesEnum.NewToken]: 'https://www.interestprotocol.com/dapp/create-token',
   [RoutesEnum.Liquidity]: 'https://interestprotocol.com/dapp/liquidity',
+  [RoutesEnum.LiquidityFarmsDetails]:
+    'https://interestprotocol.com/dapp/liquidity/details',
   [RoutesEnum.Bridge]: '/',
 };
