@@ -55,16 +55,8 @@ export const SIDEBAR_ITEMS: ReadonlyArray<
         path: Routes[RoutesEnum.LiquidityFarms],
       },
       {
-        name: 'common.farm',
-        path: Routes[RoutesEnum.Farms],
-      },
-      {
         name: 'common.createToken',
         path: Routes[RoutesEnum.CreateToken],
-      },
-      {
-        name: 'common.faucet',
-        path: Routes[RoutesEnum.Faucet],
       },
     ],
   },
