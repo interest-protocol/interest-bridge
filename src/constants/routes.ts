@@ -12,10 +12,13 @@ export enum RoutesEnum {
   DEXPool = 'dex-pool',
   DEXFindPool = 'dex-find-pool',
   DEXPoolDetails = 'dex-pool-details',
-  Bridge = 'bridge',
-  Liquidity = 'liquidity',
+  Wormhole = 'wormhole',
+  LiquidityFarms = 'liquidity',
   Faucet = 'faucet',
   NewToken = 'new-token',
+  CreateToken = 'create-token',
+  Metrics = 'metrics',
+  Celer = 'celer',
 }
 
 /**
@@ -35,6 +38,9 @@ export const Routes: Record<RoutesEnum, string> = {
     'https://interestprotocol.com/dapp/dex/pool/details',
   [RoutesEnum.Faucet]: 'https://interestprotocol.com/dapp/faucet',
   [RoutesEnum.NewToken]: 'https://www.interestprotocol.com/dapp/create-token',
-  [RoutesEnum.Liquidity]: 'https://interestprotocol.com/dapp/liquidity',
-  [RoutesEnum.Bridge]: '/',
+  [RoutesEnum.LiquidityFarms]: 'https://interestprotocol.com/dapp/liquidity',
+  [RoutesEnum.CreateToken]: 'https://interestprotocol.com/dapp/create-token',
+  [RoutesEnum.Metrics]: 'https://interestprotocol.com/dapp/metrics',
+  [RoutesEnum.Celer]: 'https://cbridge.celer.network/1/12370001/USDC',
+  [RoutesEnum.Wormhole]: '/',
 };
