@@ -1,21 +1,13 @@
 import { Routes, RoutesEnum } from '../../../../constants';
-import {
-  BridgeSVG,
-  FarmSVG,
-  LendSVG,
-  NewTokenSVG,
-  PoolSVG,
-  SwapSVG,
-} from '../../../svg';
-import Home from '../../../svg/home';
+import { BridgeSVG, DotsSVG, SwapSVG, TrendUpSVG } from '../../../svg';
+import { MenuItemProps } from './sidebar.types';
 
-export const SIDEBAR_ITEMS = [
-  {
-    Icon: Home,
-    name: 'common.home',
-    path: Routes[RoutesEnum.DApp],
-    disabled: true,
-  },
+export const SIDEBAR_ITEMS: ReadonlyArray<
+  Omit<
+    MenuItemProps,
+    'setIsCollapsed' | 'isCollapsed' | 'setTemporarilyOpen' | 'temporarilyOpen'
+  >
+> = [
   {
     Icon: SwapSVG,
     name: 'common.swap',
@@ -23,33 +15,57 @@ export const SIDEBAR_ITEMS = [
     disabled: false,
   },
   {
-    Icon: PoolSVG,
-    name: 'common.pool',
-    path: Routes[RoutesEnum.DEXPool],
-    disabled: false,
-  },
-  {
-    Icon: LendSVG,
-    name: 'common.lend',
-    path: Routes[RoutesEnum.Lend],
-    disabled: false,
-  },
-  {
-    Icon: FarmSVG,
-    name: 'common.farm',
-    path: Routes[RoutesEnum.Liquidity],
-    disabled: false,
-  },
-  {
-    Icon: NewTokenSVG,
-    name: 'common.createToken',
-    path: Routes[RoutesEnum.NewToken],
+    Icon: TrendUpSVG,
+    name: 'common.metrics',
+    path: Routes[RoutesEnum.Metrics],
     disabled: false,
   },
   {
     Icon: BridgeSVG,
     name: 'common.bridge',
-    path: Routes[RoutesEnum.Bridge],
+    path: '#',
     disabled: false,
+    accordionList: [
+      {
+        name: 'common.wormhole',
+        path: Routes[RoutesEnum.Wormhole],
+      },
+      {
+        name: 'common.celer',
+        path: Routes[RoutesEnum.Celer],
+      },
+    ],
+  },
+  {
+    Icon: DotsSVG,
+    name: 'common.more',
+    path: '#',
+    disabled: false,
+    accordionList: [
+      {
+        name: 'common.pool',
+        path: Routes[RoutesEnum.DEXPool],
+      },
+      {
+        name: 'common.lend',
+        path: Routes[RoutesEnum.Lend],
+      },
+      {
+        name: 'common.liquidity',
+        path: Routes[RoutesEnum.LiquidityFarms],
+      },
+      {
+        name: 'common.farm',
+        path: Routes[RoutesEnum.Farms],
+      },
+      {
+        name: 'common.createToken',
+        path: Routes[RoutesEnum.CreateToken],
+      },
+      {
+        name: 'common.faucet',
+        path: Routes[RoutesEnum.Faucet],
+      },
+    ],
   },
 ];
