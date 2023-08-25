@@ -3,7 +3,6 @@ import { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { capitalize } from '../../../../utils';
-import LangSwitch from './lang-switch';
 import MenuBackButton from './menu-back-button';
 import MenuButton from './menu-button';
 import MenuDesktop from './menu-desktop';
