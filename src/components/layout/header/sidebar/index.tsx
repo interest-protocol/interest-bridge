@@ -1,72 +1,72 @@
-import { Box, Typography } from '@interest-protocol/ui-kit';
-import { FC, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { v4 } from 'uuid';
+import { Box, Motion } from '@interest-protocol/ui-kit';
+import { FC, useState } from 'react';
+import { useIsMounted, useReadLocalStorage } from 'usehooks-ts';
 
-import { Routes, RoutesEnum } from '../../../../constants';
-import { capitalize } from '../../../../utils';
-import { LogoSVG } from '../../../svg';
-import { SIDEBAR_ITEMS } from './sidebar.data';
+import { LOCAL_STORAGE_VERSION } from '../../../../constants';
+import SidebarMenuList from './menu-list';
+import SidebarCollapseButton from './sidebar-collapse-button';
+import SidebarHeader from './sidebar-logo';
+
+const itemVariants = {
+  open: {
+    width: '20rem',
+  },
+  closed: {
+    width: '6rem',
+  },
+};
 
 const Sidebar: FC = () => {
-  const { t } = useTranslation();
-  const [pathName, setPathName] = useState('/');
+  const isMounted = useIsMounted();
+  const isLocalCollapsed = useReadLocalStorage<boolean>(
+    `${LOCAL_STORAGE_VERSION}-sui-interest-menu-collapse`
+  );
 
-  useEffect(() => {
-    if (window) {
-      const url = new URL(window.location.href);
-      setPathName(url.pathname);
-    }
-  }, []);
+  const [isOpen, setTemporarilyOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(isLocalCollapsed ?? false);
 
   return (
-    <Box
+    <Motion
+      pb="0"
       p="2xl"
-      width="100%"
       display="flex"
-      overflowY="auto"
-      maxWidth="20rem"
-      bg="surface.container"
+      maxHeight="100vh"
       flexDirection="column"
+      bg="surface.container"
+      variants={itemVariants}
       borderRadius="0 1rem 1rem 0"
       justifyContent="space-between"
+      transition={{ duration: 0.5 }}
+      animate={isOpen || !isCollapsed ? 'open' : 'closed'}
+      position="relative"
+      initial={
+        itemVariants[
+          isOpen || !isCollapsed
+            ? isMounted()
+              ? 'closed'
+              : 'open'
+            : isMounted()
+            ? 'open'
+            : 'closed'
+        ]
+      }
     >
       <Box>
-        <a href={Routes[RoutesEnum.Home]}>
-          <Box textAlign="center">
-            <LogoSVG full maxWidth="100%" maxHeight="2.6rem" height="100%" />
-          </Box>
-        </a>
-        <Typography m="xl" variant="small" color="onSurfaceVariant">
-          Menu
-        </Typography>
-        <Box display="flex" flexDirection="column" gap="s">
-          {SIDEBAR_ITEMS.map(({ Icon, name, path, disabled }) => (
-            <a href={path} target="_blank" rel="noreferrer" key={v4()}>
-              <Box
-                p="l"
-                key={v4()}
-                display="flex"
-                borderRadius="m"
-                color="onSurface"
-                opacity={disabled ? 0.7 : 1}
-                transition="all 350ms ease-in-out"
-                cursor={disabled ? 'not-allowed' : 'pointer'}
-                bg={pathName === path ? '#99BBFF14' : undefined}
-                nHover={{
-                  bg: !disabled && '#99BBFF28',
-                }}
-              >
-                <Icon maxHeight="1.2rem" maxWidth="1.2rem" width="100%" />
-                <Typography variant="small" ml="l">
-                  {capitalize(t(name) as string)}
-                </Typography>
-              </Box>
-            </a>
-          ))}
-        </Box>
+        <SidebarHeader isCollapsed={!isOpen && isCollapsed} />
+        <SidebarMenuList
+          setIsCollapsed={setIsCollapsed}
+          isCollapsed={!isOpen && isCollapsed}
+          setTemporarilyOpen={setTemporarilyOpen}
+        />
       </Box>
-    </Box>
+      <Box position="absolute" bottom="0" width="100%">
+        <SidebarCollapseButton
+          isOpen={isOpen}
+          isCollapsed={isCollapsed}
+          setIsCollapsed={setIsCollapsed}
+        />
+      </Box>
+    </Motion>
   );
 };
 
