@@ -16,11 +16,6 @@ export interface MenuDesktopProps {
   handleClose: () => void;
 }
 
-export interface MenuMobileProps {
-  isOpen: boolean;
-  isSettings: boolean;
-}
-
 export interface MenuButtonProps {
   isOpen: boolean;
   handleOpen: () => void;
@@ -34,4 +29,13 @@ export interface MenuBackButtonProps {
 
 export interface MenuItemWrapperProps {
   onClick?: () => void;
+}
+
+export interface MenuMobileProps extends MainMenuProps {
+  isOpen: boolean;
+  isLanguage: boolean;
+}
+
+export interface MainMenuProps {
+  openLanguageMenu: () => void;
 }
