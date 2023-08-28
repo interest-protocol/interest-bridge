@@ -7,9 +7,8 @@ import { TOAST_DURATION } from '../../constants';
 import useEventListener from '../../hooks/use-event-listener';
 import SEO from '../SEO';
 import Header from './header';
-import LangSwitch from './header/menu/lang-switch';
+import Settings from './header/settings';
 import Sidebar from './header/sidebar';
-import ThemeSwitch from './header/theme-switch';
 import { LayoutProps } from './layout.types';
 
 const Layout: FC<PropsWithChildren<LayoutProps>> = ({
@@ -70,19 +69,7 @@ const Layout: FC<PropsWithChildren<LayoutProps>> = ({
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <Box
-                  py="m"
-                  mx="m"
-                  px="l"
-                  display="flex"
-                  borderRadius="full"
-                  alignItems="center"
-                  bg="surface.container"
-                  boxShadow="inset 0 0 2px   #0002"
-                >
-                  <ThemeSwitch />
-                </Box>
-                <LangSwitch />
+                <Settings />
               </Box>
             </Box>
             {children}

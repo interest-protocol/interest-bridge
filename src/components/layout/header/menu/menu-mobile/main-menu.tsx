@@ -1,9 +1,11 @@
-import { Box, Typography } from '@interest-protocol/ui-kit';
+import { Box, Motion, Typography } from '@interest-protocol/ui-kit';
 import { FC } from 'react';
 
+import MenuSettingsList from '../../settings/menu-settings/settings-list';
+import { MainMenuProps } from '../menu.types';
 import MobileMenuList from './menu-list';
 
-const MainMenu: FC = () => {
+const MainMenu: FC<MainMenuProps> = ({ openLanguageMenu }) => {
   return (
     <Box
       variant="container"
@@ -20,6 +22,16 @@ const MainMenu: FC = () => {
           Menu
         </Typography>
         <MobileMenuList />
+        <Motion
+          zIndex={1}
+          initial="open"
+          bg="surface.container"
+          textTransform="capitalize"
+          animate="open"
+          pt="xl"
+        >
+          <MenuSettingsList openLanguageMenu={openLanguageMenu} />
+        </Motion>
       </Box>
     </Box>
   );

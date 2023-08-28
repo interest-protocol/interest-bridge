@@ -1,21 +1,30 @@
-import { Box } from '@interest-protocol/ui-kit';
+import { Box, Typography } from '@interest-protocol/ui-kit';
 import { FC, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import LangSwitch from './lang-switch';
+import { capitalize } from '../../../../utils';
 import MenuBackButton from './menu-back-button';
 import MenuButton from './menu-button';
 import MenuDesktop from './menu-desktop';
 import MenuMobile from './menu-mobile';
 
 const Menu: FC = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-  const [isSettings, setIsSettings] = useState(false);
+  const [isLanguage, setIsLanguage] = useState(false);
 
-  const handleCloseSettings = () => {
+  const openLanguageMenu = () => {
     const url = new URL(window.location.href);
-    url.searchParams.delete('settings');
+    url.searchParams.set('language', 'true');
     window.history.pushState('', '', url.toString());
-    setIsSettings(false);
+    setIsLanguage(true);
+  };
+
+  const handleCloseLanguage = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('language');
+    window.history.pushState('', '', url.toString());
+    setIsLanguage(false);
   };
 
   const handleOpen = () => {
@@ -26,7 +35,7 @@ const Menu: FC = () => {
   };
 
   const handleClose = () => {
-    handleCloseSettings();
+    handleCloseLanguage();
     const url = new URL(window.location.href);
     url.searchParams.delete('menu');
     window.history.pushState('', '', url.toString());
@@ -37,45 +46,51 @@ const Menu: FC = () => {
     if (window) {
       const url = new URL(window.location.href);
       const hasMenu = url.searchParams.get('menu') || false;
-      const hasSettings = url.searchParams.get('settings') || false;
+      const hasLanguage = url.searchParams.get('language') || false;
       setIsOpen(Boolean(hasMenu));
-      setIsSettings(Boolean(hasSettings));
+      setIsLanguage(Boolean(hasLanguage));
     }
   }, []);
 
   return (
-    <Box position="relative" width="auto">
+    <Box position="relative" width="100%">
       <Box
-        zIndex="2"
+        zIndex="5"
+        ml="-2.5rem"
         display="flex"
+        alignItems="center"
         position="relative"
         flexDirection="row-reverse"
         justifyContent="space-between"
+        bg={isOpen ? 'transparent' : 'unset'}
       >
         <Box display="flex" alignItems="center">
-          {!isOpen && (
-            <Box
-              mr="xl"
-              display="flex"
-              alignItems="center"
-              justifyContent="flex-end"
-            >
-              <LangSwitch />
-            </Box>
-          )}
           <MenuButton
             isOpen={isOpen}
             handleOpen={handleOpen}
             handleClose={handleClose}
           />
         </Box>
+        <Typography
+          variant="small"
+          textTransform="capitalize"
+          textAlign="center"
+          color="onSurface"
+          display={isLanguage ? 'block' : 'none'}
+        >
+          {capitalize(t('common.menu.selectLanguage') as string)}
+        </Typography>
         <MenuBackButton
-          handleBack={handleCloseSettings}
-          showButton={isOpen && isSettings}
+          handleBack={handleCloseLanguage}
+          showButton={isOpen && isLanguage}
         />
       </Box>
       <MenuDesktop isOpen={isOpen} handleClose={handleClose} />
-      <MenuMobile isOpen={isOpen} isSettings={isSettings} />
+      <MenuMobile
+        isOpen={isOpen}
+        isLanguage={isLanguage}
+        openLanguageMenu={openLanguageMenu}
+      />
     </Box>
   );
 };

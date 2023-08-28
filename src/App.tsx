@@ -8,16 +8,21 @@ import WormholeBridge, {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
 } from '@wormhole-foundation/wormhole-connect';
-import { FC, useState } from 'react';
+import { FC } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
 
 import { Layout } from './components';
+import { LOCAL_STORAGE_VERSION } from './constants';
 
 const config: WormholeConnectConfig = {
   env: 'mainnet',
 };
 
 const App: FC = () => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useLocalStorage(
+    `${LOCAL_STORAGE_VERSION}-sui-interest-theme`,
+    false
+  );
 
   return (
     <InterestThemeProvider
