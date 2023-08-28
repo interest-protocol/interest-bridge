@@ -4,6 +4,7 @@ export { default as BRFlagSVG } from './br-flag';
 export { default as BridgeSVG } from './bridge';
 export { default as CaretLeftSVG } from './caret-left';
 export { default as CaretUpSVG } from './caret-up';
+export { default as CogsSVG } from './cogs';
 export { default as DexSVG } from './dex';
 export { default as DiscordSVG } from './discord';
 export { default as DotsSVG } from './dots';
